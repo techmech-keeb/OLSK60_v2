@@ -1,6 +1,8 @@
 # OLSK60 v2
 OrthoLinear for the Standard Keysets 60% w/ TrackPoint!
 
+![olsk60v2](https://github.com/user-attachments/assets/2aa9d79e-fb0d-4367-8551-9987699a8846)
+
 ## 概要
 OLSK60 v2は、標準的なキーキャップセットで構成可能な60%サイズの格子配列キーボードです。
 トラックポイントを搭載し、GH60互換ケースに対応しています。

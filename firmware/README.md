@@ -4,8 +4,8 @@
 
 ## ファイル構成
 
-- `[olsk60_via.uf2](./olsk60_via.uf2)`: QMKファームウェアのバイナリファイル
-- `via/olsk60_via.json`: Remap（VIA）用の設定ファイル
+- [olsk60_via.uf2](./olsk60_via.uf2): QMKファームウェアのバイナリファイル
+- via/olsk60_via.json: Remap（VIA）用の設定ファイル
 
 ## 機能
 
