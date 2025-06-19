@@ -25,9 +25,9 @@ OLSK60 v2は、標準的なキーキャップセットに対応した、60%サ�
 - [OLSK60 キーボード操作ガイド](docs/OLSK60_user_guide.md)
 
 ## ファームウェア
-ファームウェアのソースコードは、[このリポジトリの `add-olsk60r2` ブランチ](https://github.com/techmech-keeb/qmk_firmware/tree/add-olsk60r2/keyboards/techmechkeys/olsk60)で管理しています。
+ファームウェアのソースコードは、[techmech-keeb/qmk_firmware](https://github.com/techmech-keeb/qmk_firmware)リポジトリで管理しています。
 
-VIA用のキーボード定義JSONファイルは [`firmware/via/`](firmware/via/) ディレクトリにて公開しています。
+ドキュメントおよびコンパイル済みファームウェアは [`firmware/`](firmware/) フォルダにて公開しています。
 
 ## 購入
 [BOOTH](https://techmech.booth.pm/items/5896343)にて販売中です。
