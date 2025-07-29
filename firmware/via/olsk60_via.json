@@ -1,5 +1,5 @@
 {
-    "name": "OLSK60",
+    "name": "OLSK60v2",
     "vendorId": "0x746D",
     "productId": "0x0102",
     "firmwareVersion": 0,
@@ -11,28 +11,79 @@
     },
     "customKeycodes": [
         {
-            "name": "ACCEL_VL_KEY",
-            "title": "Accel Very Low"
+            "name": "SPEED_LEVEL_1_KEY",
+            "title": "Speed Lv1",
+            "shortName": "Spd1"
         },
         {
-            "name": "ACCEL_L_KEY",
-            "title": "Accel Low"
+            "name": "SPEED_LEVEL_2_KEY",
+            "title": "Speed Lv2",
+            "shortName": "Spd2"
         },
         {
-            "name": "ACCEL_M_KEY",
-            "title": "Accel Medium"
+            "name": "SPEED_LEVEL_3_KEY",
+            "title": "Speed Lv3",
+            "shortName": "Spd3"
         },
         {
-            "name": "ACCEL_H_KEY",
-            "title": "Accel High"
+            "name": "SPEED_LEVEL_4_KEY",
+            "title": "Speed Lv4",
+            "shortName": "Spd4"
         },
         {
-            "name": "ACCEL_VH_KEY",
-            "title": "Accel Very High"
+            "name": "SPEED_LEVEL_5_KEY",
+            "title": "Speed Lv5",
+            "shortName": "Spd5"
         },
         {
-            "name": "LAYER3_HOLD_KEY",
-            "title": "Layer 3 Hold"
+            "name": "SPEED_UP_KEY",
+            "title": "Speed Up",
+            "shortName": "Spd+"
+        },
+        {
+            "name": "SPEED_DOWN_KEY",
+            "title": "Speed Down",
+            "shortName": "Spd-"
+        },
+        {
+            "name": "SMOOTH_UP_KEY",
+            "title": "Smoothing Up",
+            "shortName": "Smt+"
+        },
+        {
+            "name": "SMOOTH_DOWN_KEY",
+            "title": "Smoothing Down",
+            "shortName": "Smt-"
+        },
+        {
+            "name": "ACCEL_UP_KEY",
+            "title": "Acceleration Up",
+            "shortName": "Acc+"
+        },
+        {
+            "name": "ACCEL_DOWN_KEY",
+            "title": "Acceleration Down",
+            "shortName": "Acc-"
+        },
+        {
+            "name": "DECEL_UP_KEY",
+            "title": "Deceleration Up",
+            "shortName": "Dec+"
+        },
+        {
+            "name": "DECEL_DOWN_KEY",
+            "title": "Deceleration Down",
+            "shortName": "Dec-"
+        },
+        {
+            "name": "ALL_SOUND_TOGGLE",
+            "title": "All Sound Toggle",
+            "shortName": "Snd"
+        },
+        {
+            "name": "EEPROM_STATS_KEY",
+            "title": "EEPROM Stats",
+            "shortName": "Eep"
         }
     ],
     "layouts": {
