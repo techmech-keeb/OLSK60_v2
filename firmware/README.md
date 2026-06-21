@@ -4,10 +4,9 @@
 
 ---
 
-## ファイル構成
+## 配布
 
-- [techmechkeys_olsk60_default.uf2](./techmechkeys_olsk60_default.uf2) — QMKファームウェアのバイナリファイル
-- [via/olsk60_via.json](./via/olsk60_via.json) — Remap（VIA互換）用の設定ファイル
+ファームウェアバイナリ（.uf2）およびVIA用JSONファイルは、[GitHub Releases](https://github.com/techmech-keeb/OLSK60_v2/releases)から入手できます。
 
 ---
 
@@ -38,7 +37,7 @@
 1. キーボードをPCに接続していない状態にします。
 2. ESCキーを押しながら、USBケーブルでキーボードをPCに接続します。
 3. "RPI-RP2"という名前のドライブ（ボリューム）がPC上に表示されます。
-4. ダウンロードした [techmechkeys_olsk60_default.uf2](./techmechkeys_olsk60_default.uf2) ファイルを"RPI-RP2"ドライブのルートディレクトリにコピーします。
+4. [GitHub Releases](https://github.com/techmech-keeb/OLSK60_v2/releases)からダウンロードした `.uf2` ファイルを"RPI-RP2"ドライブのルートディレクトリにコピーします。
 5. コピーが完了すると、キーボードが自動的に再起動し、新しいファームウェアが適用されます。
 
 ---
