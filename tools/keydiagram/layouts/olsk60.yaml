@@ -1,0 +1,85 @@
+# OLSK60 表示レイアウト定義（キー配置図の生成用）
+#
+# - 座標系: 1u = 60px、キー矩形は各セル内で 3px オフセット・幅 60*w-6 px
+# - 出自: docs/images/layer0-base.svg（既存図）から抽出し、
+#   qmk-config techmechkeys/olsk60/keyboard.json の物理レイアウトと突合済み。
+#   分割可能な位置（スペース分割・下段オプション等）は出荷時キーキャップ構成に
+#   統合した「表示レイアウト」であり、マトリクスと 1:1 ではない。
+# - label / sub: レイヤー0（出荷時）の刻印。個々の図（diagrams/*.yaml）は
+#   これを id で参照して上書き・強調・グレーアウトする。
+# - mod: true = 修飾キー系の配色（灰）で描く
+# - fill / stroke 指定キー: 全レイヤー共通の機能キー配色
+
+name: olsk60
+
+keys:
+  - {id: esc,      x: 0.75,  y: 0, label: Esc, mod: true}
+  - {id: "1",      x: 1.75,  y: 0, label: "1", sub: "!"}
+  - {id: "2",      x: 2.75,  y: 0, label: "2", sub: "@"}
+  - {id: "3",      x: 3.75,  y: 0, label: "3", sub: "#"}
+  - {id: "4",      x: 4.75,  y: 0, label: "4", sub: "$"}
+  - {id: "5",      x: 5.75,  y: 0, label: "5", sub: "%"}
+  - {id: "6",      x: 7.5,   y: 0, label: "6", sub: "^"}
+  - {id: "7",      x: 8.5,   y: 0, label: "7", sub: "&"}
+  - {id: "8",      x: 9.5,   y: 0, label: "8", sub: "*"}
+  - {id: "9",      x: 10.5,  y: 0, label: "9", sub: "("}
+  - {id: "0",      x: 11.5,  y: 0, label: "0", sub: ")"}
+  - {id: bksp,     x: 12.5,  y: 0, w: 2, label: Backspace, size: 11, mod: true}
+  - {id: tab,      x: 0.15,  y: 1, w: 1.5, label: Tab, mod: true}
+  - {id: q,        x: 1.75,  y: 1, label: Q}
+  - {id: w,        x: 2.75,  y: 1, label: W}
+  - {id: e,        x: 3.75,  y: 1, label: E}
+  - {id: r,        x: 4.75,  y: 1, label: R}
+  - {id: t,        x: 5.75,  y: 1, label: T}
+  - {id: y,        x: 7.5,   y: 1, label: Y}
+  - {id: u,        x: 8.5,   y: 1, label: U}
+  - {id: i,        x: 9.5,   y: 1, label: I}
+  - {id: o,        x: 10.5,  y: 1, label: O}
+  - {id: p,        x: 11.5,  y: 1, label: P}
+  - {id: lbrc,     x: 12.5,  y: 1, label: "[", sub: "{"}
+  - {id: bsls,     x: 13.5,  y: 1, w: 1.5, label: "\\", sub: "|"}
+  - {id: ctrl-l,   x: 0,     y: 2, w: 1.75, label: Ctrl, size: 11, mod: true}
+  - {id: a,        x: 1.75,  y: 2, label: A}
+  - {id: s,        x: 2.75,  y: 2, label: S}
+  - {id: d,        x: 3.75,  y: 2, label: D}
+  - {id: f,        x: 4.75,  y: 2, label: F}
+  - {id: g,        x: 5.75,  y: 2, label: G}
+  - {id: h,        x: 7.5,   y: 2, label: H}
+  - {id: j,        x: 8.5,   y: 2, label: J}
+  - {id: k,        x: 9.5,   y: 2, label: K}
+  - {id: l,        x: 10.5,  y: 2, label: L}
+  - {id: scln,     x: 11.5,  y: 2, label: ";", sub: ":"}
+  - {id: enter,    x: 12.5,  y: 2, w: 2.25, label: Enter, size: 11, mod: true}
+  - {id: shift-l,  x: 0,     y: 3, w: 1.75, label: Shift, size: 11, mod: true}
+  - {id: z,        x: 1.75,  y: 3, label: Z}
+  - {id: x,        x: 2.75,  y: 3, label: X}
+  - {id: c,        x: 3.75,  y: 3, label: C}
+  - {id: v,        x: 4.75,  y: 3, label: V}
+  - {id: b,        x: 5.75,  y: 3, label: B}
+  - {id: n,        x: 7.5,   y: 3, label: N}
+  - {id: m,        x: 8.5,   y: 3, label: M}
+  - {id: comm,     x: 9.5,   y: 3, label: ",", sub: "<"}
+  - {id: dot,      x: 10.5,  y: 3, label: ".", sub: ">"}
+  - {id: slsh,     x: 11.5,  y: 3, label: /, sub: "?"}
+  - {id: up,       x: 12.5,  y: 3, label: "↑"}
+  - {id: shift-r,  x: 13.5,  y: 3, w: 1.25, label: Shift, size: 11, mod: true}
+  - {id: ctrl-bl,  x: 0.5,   y: 4, w: 1.25, label: Ctrl, size: 11, mod: true}
+  - {id: win,      x: 1.75,  y: 4, w: 1.25, label: Win, mod: true}
+  - {id: alt,      x: 3,     y: 4, w: 1.5, label: Alt, mod: true}
+  - {id: btn1,     x: 4.5,   y: 4, label: 左クリック, size: 9.2, fill: "#fbd9d3", stroke: "#c9524a"}
+  - {id: btn2,     x: 5.5,   y: 4, label: 右クリック, size: 9.2, fill: "#e8dcf5", stroke: "#7d5bb0"}
+  - {id: mo1,      x: 6.5,   y: 4, w: 1.25, label: MO(1), size: 11, sub: Fn, fill: "#d9f2f6", stroke: "#2e9aab"}
+  - {id: space,    x: 7.75,  y: 4, label: Space, size: 11}
+  - {id: delete,   x: 8.75,  y: 4, w: 1.75, label: Delete, size: 11, mod: true}
+  - {id: mo2,      x: 10.5,  y: 4, label: MO(2), size: 11, sub: 設定, fill: "#d8f0dc", stroke: "#2f8f45"}
+  - {id: left,     x: 11.5,  y: 4, label: "←"}
+  - {id: down,     x: 12.5,  y: 4, label: "↓"}
+  - {id: right,    x: 13.5,  y: 4, label: "→"}
+
+# レイアウト情報に現れないハードウェア要素（別枠管理）
+hardware:
+  trackpoint:
+    cx: 427.5   # キー盤面グループ内の px 座標
+    cy: 150.0
+    label: TrackPoint
+  encoder: true   # 図下部にロータリーエンコーダ凡例ブロックを描く

@@ -1,0 +1,24 @@
+# レイヤー0（基本レイヤー）— 既存 docs/images/layer0-base.svg の再現スペック。
+# ジェネレータの様式回帰テストとして使う（verify_layer0.py が既存SVGと突合する）。
+layout: olsk60
+badge: {text: Layer 0, color: "#868e96"}
+title: 基本レイヤー
+note: 常時有効（ベース）
+led: {text: 白（暗め）, color: "#868e96"}
+defaults: base
+encoder:
+  lines:
+    - "時計回り: 音量 −"
+    - "反時計回り: 音量 +"
+    - "押し込み: ↓"
+  footnote: ※ 回転方向と機能の対応は取り付け向きに依存します
+legend:
+  - {x: 340, style: btn1, text: マウス左ボタン（全レイヤー有効）}
+  - {x: 545.0, style: btn2, text: マウス右ボタン（全レイヤー有効）}
+  - {x: 750.0, style: mo1, text: レイヤー1切替（押している間）}
+  - {x: 340, row: 2, style: mo2, text: レイヤー2切替（押している間）}
+styles:
+  btn1: {fill: "#fbd9d3", stroke: "#c9524a"}
+  btn2: {fill: "#e8dcf5", stroke: "#7d5bb0"}
+  mo1: {fill: "#d9f2f6", stroke: "#2e9aab"}
+  mo2: {fill: "#d8f0dc", stroke: "#2f8f45"}
