@@ -1,0 +1,49 @@
+# サウンド機能・ピアノモードの音階配置図。
+# 音階マッピングの出典: qmk-config techmechkeys/olsk60/key_sound.c keycode_to_semitone()
+#   - 基準 (オクターブオフセット 0): A キー = C4 (261.63 Hz)、A4 = 440 Hz
+#   - 白鍵相当 10 キー / 黒鍵相当 7 キー、その他のキーはランダム音
+#   - Enter はタイプライター効果音（typewriter_song）
+layout: olsk60
+badge: {text: サウンド, color: "#2f66c4"}
+title: ピアノモード（音階配置）
+note: レイヤー2 + X で切替（音声ON時のみ）
+led: {text: 青}
+defaults: disabled
+styles:
+  white-key: {fill: "#ffffff", stroke: "#2f66c4", label: "#212529", sub: "#868e96"}
+  black-key: {fill: "#3b4148", stroke: "#212529", label: "#ffffff", sub: "#ced4da"}
+  fx-key: {fill: "#ffe8cc", stroke: "#cc7a29", label: "#212529", sub: "#868e96"}
+keys:
+  # 白鍵（ホームロー中心）: lines = [音名, 階名] / sub = キー刻印
+  a:    {style: white-key, lines: [C4, ド],   sub: A}
+  s:    {style: white-key, lines: [D4, レ],   sub: S}
+  d:    {style: white-key, lines: [E4, ミ],   sub: D}
+  f:    {style: white-key, lines: [F4, ファ], sub: F}
+  g:    {style: white-key, lines: [G4, ソ],   sub: G}
+  h:    {style: white-key, lines: [A4, ラ],   sub: H}
+  j:    {style: white-key, lines: [B4, シ],   sub: J}
+  k:    {style: white-key, lines: [C5, ド],   sub: K}
+  l:    {style: white-key, lines: [D5, レ],   sub: L}
+  scln: {style: white-key, lines: [E5, ミ],   sub: ";"}
+  # 黒鍵（上段）
+  w: {style: black-key, label: C#4, sub: W}
+  e: {style: black-key, label: D#4, sub: E}
+  t: {style: black-key, label: F#4, sub: T}
+  y: {style: black-key, label: G#4, sub: Y}
+  u: {style: black-key, label: A#4, sub: U}
+  o: {style: black-key, label: C#5, sub: O}
+  p: {style: black-key, label: D#5, sub: P}
+  # Enter はタイプライター効果音
+  enter: {style: fx-key, label: Enter, size: 11, sub: 効果音}
+encoder:
+  lines:
+    - "時計回り: オクターブ +"
+    - "反時計回り: オクターブ −"
+    - "調整幅: −3 〜 +3"
+  footnote: ※ オクターブ調整はレイヤー2でエンコーダを回して行います
+legend:
+  - {x: 340, style: white-key, text: 白鍵に相当（音階）}
+  - {x: 505, style: black-key, text: 黒鍵に相当（半音）}
+  - {x: 670, style: fx-key, text: Enter = タイプライター効果音}
+  - {x: 340, row: 2, style: disabled, text: その他のキー = ランダム音}
+  - {x: 545, row: 2, text: ※ 音名は出荷時設定（A キー = C4 / 261.63 Hz）のもの}
