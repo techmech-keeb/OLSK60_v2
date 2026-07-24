@@ -83,3 +83,53 @@ hardware:
     cy: 150.0
     label: TrackPoint
   encoder: true   # 図下部にロータリーエンコーダ凡例ブロックを描く
+
+# 最下段スペースバーのレイアウトバリアント。
+# 出典: qmk-config techmechkeys/olsk60/olsk60_via.json のレイアウトオプション
+#   （labels: ["Spacebar", "5-Split Space", "3-Split Space", "6.25U Space"]、
+#    選択肢 0/1/2 のキー座標）。上4段は全バリアント共通。
+# 図スペックで `variant: <name>` を指定すると、replace_y の行を丸ごと差し替える。
+# base の keys は 5-Split（v2.1 出荷時）と一致するため、variant 未指定＝5-Split。
+variants:
+  5-split:
+    label: 5-Split Space
+    replace_y: 4
+    keys:
+      - {id: ctrl-bl, x: 0.5,  y: 4, w: 1.25, label: Ctrl, size: 11, mod: true}
+      - {id: win,     x: 1.75, y: 4, w: 1.25, label: Win, mod: true}
+      - {id: alt,     x: 3,    y: 4, w: 1.5,  label: Alt, mod: true}
+      - {id: btn1,    x: 4.5,  y: 4, label: 左クリック, size: 9.2, fill: "#fbd9d3", stroke: "#c9524a"}
+      - {id: btn2,    x: 5.5,  y: 4, label: 右クリック, size: 9.2, fill: "#e8dcf5", stroke: "#7d5bb0"}
+      - {id: mo1,     x: 6.5,  y: 4, w: 1.25, label: MO(1), size: 11, sub: Fn, fill: "#d9f2f6", stroke: "#2e9aab"}
+      - {id: space,   x: 7.75, y: 4, label: Space, size: 11}
+      - {id: delete,  x: 8.75, y: 4, w: 1.75, label: Delete, size: 11, mod: true}
+      - {id: mo2,     x: 10.5, y: 4, label: MO(2), size: 11, sub: 設定, fill: "#d8f0dc", stroke: "#2f8f45"}
+      - {id: left,    x: 11.5, y: 4, label: "←"}
+      - {id: down,    x: 12.5, y: 4, label: "↓"}
+      - {id: right,   x: 13.5, y: 4, label: "→"}
+  3-split:
+    label: 3-Split Space
+    replace_y: 4
+    keys:
+      - {id: ctrl-bl, x: 0.5,  y: 4, w: 1.25, label: Ctrl, size: 11, mod: true}
+      - {id: win,     x: 1.75, y: 4, w: 1.25, label: Win, mod: true}
+      - {id: alt,     x: 3,    y: 4, w: 1.25, label: Alt, mod: true}
+      - {id: btn2,    x: 4.25, y: 4, w: 2.25, label: 右クリック, size: 9.2, fill: "#e8dcf5", stroke: "#7d5bb0"}
+      - {id: mo1,     x: 6.5,  y: 4, w: 1.25, label: MO(1), size: 11, sub: Fn, fill: "#d9f2f6", stroke: "#2e9aab"}
+      - {id: delete,  x: 7.75, y: 4, w: 2.75, label: Delete, size: 11, mod: true}
+      - {id: mo2,     x: 10.5, y: 4, label: MO(2), size: 11, sub: 設定, fill: "#d8f0dc", stroke: "#2f8f45"}
+      - {id: left,    x: 11.5, y: 4, label: "←"}
+      - {id: down,    x: 12.5, y: 4, label: "↓"}
+      - {id: right,   x: 13.5, y: 4, label: "→"}
+  6.25u:
+    label: 6.25U Space
+    replace_y: 4
+    keys:
+      - {id: ctrl-bl, x: 0.5,  y: 4, w: 1.25, label: Ctrl, size: 11, mod: true}
+      - {id: win,     x: 1.75, y: 4, w: 1.25, label: Win, mod: true}
+      - {id: alt,     x: 3,    y: 4, w: 1.25, label: Alt, mod: true}
+      - {id: mo1,     x: 4.25, y: 4, w: 6.25, label: MO(1), size: 11, sub: Fn, fill: "#d9f2f6", stroke: "#2e9aab"}
+      - {id: mo2,     x: 10.5, y: 4, label: MO(2), size: 11, sub: 設定, fill: "#d8f0dc", stroke: "#2f8f45"}
+      - {id: left,    x: 11.5, y: 4, label: "←"}
+      - {id: down,    x: 12.5, y: 4, label: "↓"}
+      - {id: right,   x: 13.5, y: 4, label: "→"}

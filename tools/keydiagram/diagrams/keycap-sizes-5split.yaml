@@ -1,0 +1,22 @@
+# キーキャップサイズガイド — 5-Split Space（v2.1 出荷時）
+# 各キーに刻印名（上）とキーキャップ幅（下, 例 1.25U）を表示し、サイズ別に色分け。
+# 下部にサイズ別の必要数を自動集計して凡例表示する。
+layout: olsk60
+variant: 5-split
+label_mode: size
+legend_mode: sizes
+hide_trackpoint: true
+badge: {text: サイズ, color: "#5b6b7a"}
+title: 5-Split Space のキーキャップサイズ
+note: v2.1 の出荷時レイアウト
+legend_title: キーキャップサイズと必要数（この構成の全体）
+legend_footnote: ※ 上4段は全レイアウト共通。数量はこの構成でキーボード全体に必要なキーキャップ数です。
+size_palette:
+  1U:     {fill: "#ffffff", stroke: "#c3c9cf"}
+  1.25U:  {fill: "#dbeafe", stroke: "#4d82c4"}
+  1.5U:   {fill: "#d8f0dc", stroke: "#2f8f45"}
+  1.75U:  {fill: "#fff3cd", stroke: "#a07d1c"}
+  2U:     {fill: "#fde0ec", stroke: "#c2447e"}
+  2.25U:  {fill: "#e8dcf5", stroke: "#7d5bb0"}
+  2.75U:  {fill: "#d2f2ea", stroke: "#1f8a70"}
+  6.25U:  {fill: "#ffe8cc", stroke: "#cc7a29"}

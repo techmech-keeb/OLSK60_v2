@@ -12,8 +12,9 @@ tools/keydiagram/
 ├─ layouts/
 │  └─ olsk60.yaml     # 表示レイアウト（キー座標・出荷時刻印）＋ハードウェア注記
 └─ diagrams/
-   ├─ layer0-base.yaml   # 既存図の再現スペック（回帰テスト基準）
-   └─ piano-mode.yaml    # サウンド機能・ピアノモード音階配置図
+   ├─ layer0-base.yaml        # 既存図の再現スペック（回帰テスト基準）
+   ├─ piano-mode.yaml         # サウンド機能・ピアノモード音階配置図
+   └─ keycap-sizes-*.yaml     # キーキャップサイズガイド（5split/3split/625u）
 ```
 
 ## 使い方
@@ -62,6 +63,28 @@ encoder:                            # エンコーダ凡例（最大3行＋脚�
 legend:                             # 下部凡例（row: 2 で2段目、style 省略で文字のみ）
   - {x: 340, style: white-key, text: 白鍵に相当（音階）}
 ```
+
+### 最下段バリアントとサイズ表示モード
+
+最下段のスペースバー構成（5-Split / 3-Split / 6.25U）は `layouts/olsk60.yaml`
+の `variants:` に定義してある（上4段は共通）。図スペックで選択・表示する。
+
+```yaml
+variant: 3-split          # 最下段を 3-Split に差し替える（未指定＝5-Split）
+label_mode: size          # 全キーに「刻印名（上）＋幅 1.25U（下）」を表示
+legend_mode: sizes        # サイズ別の必要数を自動集計して下部に凡例表示
+legend_title: ...         # サイズ凡例の見出し（省略可）
+legend_footnote: ...      # サイズ凡例の脚注（省略可）
+hide_trackpoint: true     # サイズ表では TrackPoint マーカーを隠す
+size_palette:             # サイズ→配色（label_mode: size 時に適用）
+  1U:    {fill: "#ffffff", stroke: "#c3c9cf"}
+  1.25U: {fill: "#dbeafe", stroke: "#4d82c4"}
+  # ...
+```
+
+`variant` を増やすときは `layouts/olsk60.yaml` の `variants:` に
+`replace_y`（差し替える行）とその行のキー一覧を足す。座標の出典は
+`qmk-config` の `olsk60_via.json`（レイアウトオプションの選択肢）。
 
 ## 様式を変えないためのルール
 
