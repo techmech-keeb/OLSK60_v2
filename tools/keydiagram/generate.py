@@ -62,6 +62,33 @@ def cjk_count(s):
     return sum(1 for ch in s if ord(ch) > 0x2E7F)
 
 
+def format_u(w):
+    """キー幅（1u=1.0）を "1.25U" のような表記にする。"""
+    return f'{w:g}U'
+
+
+def resolve_keys(layout, diagram):
+    """図スペックの variant を反映した実効キー列を返す。
+
+    variant を指定すると、layouts の variants[<name>] が持つキー列で
+    replace_y の行（既定では最下段）を丸ごと差し替える。上段は共通。
+    variant 未指定なら base の keys をそのまま使う（既存図は不変）。
+    """
+    keys = [dict(k) for k in layout['keys']]
+    vname = diagram.get('variant')
+    if not vname:
+        return keys
+    variants = layout.get('variants') or {}
+    if vname not in variants:
+        raise SystemExit(f'unknown variant: {vname}')
+    v = variants[vname] or {}
+    if not v.get('keys'):
+        return keys  # 恒等バリアント
+    ry = v.get('replace_y')
+    kept = [k for k in keys if k.get('y') != ry] if ry is not None else keys
+    return kept + [dict(k) for k in v['keys']]
+
+
 class Renderer:
     def __init__(self):
         self.parts = []
@@ -99,14 +126,37 @@ def key_style(layout_key, override, diagram):
     return dict(base)
 
 
+def render_size_key(r, lk, ov, diagram, px, py, pw, cx):
+    """キーキャップサイズ表示モード: 上に刻印名、下に幅（例 1.25U）を描く。
+    配色は size_palette[<size>] があればサイズ別に、無ければ通常/修飾色。"""
+    usize = format_u(lk.get('w', 1))
+    ps = (diagram.get('size_palette') or {}).get(usize)
+    if ps:
+        fill, stroke = ps['fill'], ps['stroke']
+    else:
+        base = STYLES['mod'] if lk.get('mod') else STYLES['normal']
+        fill, stroke = base['fill'], base['stroke']
+    r.rect(px, py, pw, float(KEY_SIZE), 7, fill, stroke, 1.5)
+    name = ov.get('label', lk.get('label'))
+    if name is not None:
+        r.text(cx, round(py + 21, 1), 9.5, '#495057', name, anchor='middle')
+    r.text(cx, round(py + 41, 1), 12.5, '#212529', usize, weight=700, anchor='middle')
+
+
 def render_key(r, lk, override, diagram):
     px = float(round(KEY_INSET + UNIT * lk['x'], 1))
     py = float(round(KEY_INSET + UNIT * lk['y'], 1))
     pw = float(round(UNIT * lk.get('w', 1) - 2 * KEY_INSET, 1))
+    cx = round(px + pw / 2, 1)
+    ov = override or {}
+
+    if diagram.get('label_mode') == 'size':
+        render_size_key(r, lk, ov, diagram, px, py, pw, cx)
+        return
+
     st = key_style(lk, override, diagram)
     r.rect(px, py, pw, float(KEY_SIZE), 7, st['fill'], st['stroke'], 1.5)
 
-    ov = override or {}
     label = ov.get('label', lk.get('label'))
     lines = ov.get('lines')
     if 'sub' in ov:
@@ -116,7 +166,6 @@ def render_key(r, lk, override, diagram):
     else:
         sub = lk.get('sub')
     size = ov.get('size', lk.get('size', 13))
-    cx = round(px + pw / 2, 1)
 
     if sub is not None:
         r.text(cx, round(py + 13, 1), 9.5, st['sub'], sub, anchor='middle')
@@ -154,11 +203,12 @@ def render(layout, diagram):
     # キー盤面
     r.add(f'<g transform="translate({BOARD_TX},{BOARD_TY})">')
     r.rect(FRAME['x'], FRAME['y'], FRAME['w'], FRAME['h'], 12, '#f1f3f5', '#dee2e6', 1.5)
+    keys = resolve_keys(layout, diagram)
     overrides = diagram.get('keys', {}) or {}
-    unknown = set(overrides) - {k['id'] for k in layout['keys']}
+    unknown = set(overrides) - {k['id'] for k in keys}
     if unknown:
         raise SystemExit(f'diagram references unknown key ids: {sorted(unknown)}')
-    for lk in layout['keys']:
+    for lk in keys:
         render_key(r, lk, overrides.get(lk['id']), diagram)
 
     tp = (layout.get('hardware') or {}).get('trackpoint')
@@ -197,6 +247,29 @@ def render(layout, diagram):
             r.rect(x, y, 14, 13, 3, st['fill'], st['stroke'], 1.2)
             tx = x + 19
         r.text(tx, y + 11, 10.5, '#495057', item['text'])
+
+    # サイズ別の自動凡例（label_mode: size と対で使う）
+    if diagram.get('legend_mode') == 'sizes':
+        counts, order = {}, []
+        for k in keys:
+            wu = k.get('w', 1)
+            u = format_u(wu)
+            if u not in counts:
+                order.append((wu, u))
+            counts[u] = counts.get(u, 0) + 1
+        order.sort()
+        palette = diagram.get('size_palette') or {}
+        r.text(20, 406, 11, '#868e96',
+               diagram.get('legend_title', 'キーキャップサイズと数量'), weight=700)
+        x0, y0, slotw = 24, 428, 112
+        for i, (wu, u) in enumerate(order):
+            x = x0 + i * slotw
+            ps = palette.get(u) or {}
+            r.rect(x, y0 - 11, 14, 13, 3, ps.get('fill', '#ffffff'),
+                   ps.get('stroke', '#c3c9cf'), 1.2)
+            r.text(x + 19, y0, 10.5, '#495057', f'{u} ×{counts[u]}')
+        if diagram.get('legend_footnote'):
+            r.text(20, 456, 9.5, '#adb5bd', diagram['legend_footnote'])
 
     r.add('</svg>')
     return ''.join(r.parts)
