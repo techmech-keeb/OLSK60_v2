@@ -2,7 +2,7 @@
 #
 # - 座標系: 1u = 60px、キー矩形は各セル内で 3px オフセット・幅 60*w-6 px
 # - 出自: docs/images/layer0-base.svg（既存図）から抽出し、
-#   qmk-config techmechkeys/olsk60/keyboard.json の物理レイアウトと突合済み。
+#   製品の物理レイアウト定義と突合済み。
 #   分割可能な位置（スペース分割・下段オプション等）は出荷時キーキャップ構成に
 #   統合した「表示レイアウト」であり、マトリクスと 1:1 ではない。
 # - label / sub: レイヤー0（出荷時）の刻印。個々の図（diagrams/*.yaml）は
@@ -85,7 +85,7 @@ hardware:
   encoder: true   # 図下部にロータリーエンコーダ凡例ブロックを描く
 
 # 最下段スペースバーのレイアウトバリアント。
-# 出典: qmk-config techmechkeys/olsk60/olsk60_via.json のレイアウトオプション
+# 出典: VIA 用キーボード定義 JSON のレイアウトオプション
 #   （labels: ["Spacebar", "5-Split Space", "3-Split Space", "6.25U Space"]、
 #    選択肢 0/1/2 のキー座標）。上4段は全バリアント共通。
 # 図スペックで `variant: <name>` を指定すると、replace_y の行を丸ごと差し替える。

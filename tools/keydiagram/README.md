@@ -33,7 +33,7 @@ python3 verify_style.py                               # 様式回帰テスト
 
 1. **表示レイアウト**（`layouts/olsk60.yaml` の `keys:`）
    キーの座標（1u = 60px）・幅・出荷時の刻印。既存図から抽出し、
-   `qmk-config` の `techmechkeys/olsk60/keyboard.json` と突合済み。
+   製品の物理レイアウト定義と突合済み。
    分割位置（スペース分割・下段オプション）は出荷時キーキャップ構成に統合した
    「表示用」であり、物理マトリクスと 1:1 ではない点に注意。
 2. **ハードウェア注記**（同ファイルの `hardware:`）
@@ -84,7 +84,7 @@ size_palette:             # サイズ→配色（label_mode: size 時に適用�
 
 `variant` を増やすときは `layouts/olsk60.yaml` の `variants:` に
 `replace_y`（差し替える行）とその行のキー一覧を足す。座標の出典は
-`qmk-config` の `olsk60_via.json`（レイアウトオプションの選択肢）。
+VIA 用キーボード定義 JSON（レイアウトオプションの選択肢）。
 
 ## 様式を変えないためのルール
 
@@ -107,6 +107,6 @@ size_palette:             # サイズ→配色（label_mode: size 時に適用�
 ## 将来の汎用化メモ
 
 - 他キーボードは `layouts/<name>.yaml` を追加すれば同じ図スペック書式で使える。
-  QMK の `keyboard.json`（`layouts[].layout` の x/y/w）から座標を起こし、
+  キーボード定義の座標データ（x / y / w）から座標を起こし、
   1u=60px・セル内 3px オフセットで px 化する（`x_px = 3 + 60 * x_u`）。
 - 既存の他の図（layer1/2/3 等）も diagram スペック化すれば再生成可能になる。

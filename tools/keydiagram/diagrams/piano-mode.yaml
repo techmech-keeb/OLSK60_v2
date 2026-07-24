@@ -1,5 +1,5 @@
 # サウンド機能・ピアノモードの音階配置図。
-# 音階マッピングの出典: qmk-config techmechkeys/olsk60/key_sound.c keycode_to_semitone()
+# 音階マッピングの出典: 製品ファームウェアのサウンド仕様
 #   - 基準 (オクターブオフセット 0): A キー = C4 (261.63 Hz)、A4 = 440 Hz
 #   - 白鍵相当 10 キー / 黒鍵相当 7 キー、その他のキーはランダム音
 #   - Enter はタイプライター効果音（typewriter_song）
