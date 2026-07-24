@@ -3,6 +3,18 @@
 単位はすべて mm。元図（Cherry MX データシートの DIMENSIONS / MOUNTING OPTIONS）から読み取った値と、
 一般的な MX 互換寸法として補った値を分けて記載する。
 
+| 項目 | 内容 |
+|---|---|
+| 出典 | Cherry MX データシート（DIMENSIONS / MOUNTING OPTIONS 図）|
+| 最終確認日 | 2026-07-24 |
+| 用途 | OLSK60 のビルドガイド（スイッチ・プレート・キーキャップの寸法説明）の根拠 |
+| 図 | [`../images/cherry-mx-switch-views.svg`](../images/cherry-mx-switch-views.svg)（本書の数値を作図したもの。6px = 1mm）|
+
+> **Status: Reviewed** — §1〜§4 は元図の記載値。§5 と一部の外形値は一般的な MX 互換寸法として補った参考値（§6 参照）。
+>
+> 「Cherry MX」は Cherry 社の商標。本書は MX 互換スイッチ全般の寸法目安として参照するものであり、
+> OLSK60 に特定ブランドのスイッチが同梱・指定されることを意味しない。
+
 ## 1. 高さ方向（積み上げ）
 
 | 部位 | 寸法 | 備考 |

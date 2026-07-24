@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="680" height="530" viewBox="0 0 680 530" role="img">
-<title>Cherry MX switch orthographic views</title>
-<desc>Front, side, top, bottom pin layout, and plate-mount section of a Cherry MX keyboard switch with dimensions in mm.</desc>
+<title>MX互換スイッチ 三面図・寸法</title>
+<desc>MX互換キースイッチの正面図・側面図・上面図・底面ピン配置・プレートマウント断面。寸法の単位はmm。</desc>
 <style>
-  .t{font-family:sans-serif;font-size:14px;fill:#2C2C2A}
-  .ts{font-family:sans-serif;font-size:12px;fill:#5F5E5A}
-  .th{font-family:sans-serif;font-size:14px;font-weight:500;fill:#2C2C2A}
+  .t{font-family:'Noto Sans CJK JP','Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif;font-size:14px;fill:#2C2C2A}
+  .ts{font-family:'Noto Sans CJK JP','Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif;font-size:12px;fill:#5F5E5A}
+  .th{font-family:'Noto Sans CJK JP','Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif;font-size:14px;font-weight:500;fill:#2C2C2A}
   .body{fill:#FFFFFF;stroke:#2C2C2A;stroke-width:1}
   .body-thin{fill:#FFFFFF;stroke:#2C2C2A;stroke-width:.8}
   .outline{fill:none;stroke:#2C2C2A;stroke-width:.8}
@@ -17,9 +17,9 @@
 </style>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 
-<text class="th" x="150" y="70" text-anchor="middle">Front view</text>
-<text class="th" x="350" y="70" text-anchor="middle">Side view</text>
-<text class="th" x="555" y="70" text-anchor="middle">Top view</text>
+<text class="th" x="150" y="70" text-anchor="middle">正面図</text>
+<text class="th" x="350" y="70" text-anchor="middle">側面図</text>
+<text class="th" x="555" y="70" text-anchor="middle">上面図</text>
 
 <path class="body" d="M115.2 120.6 L184.8 120.6 L192 126 L192 152.4 L196.8 152.4 L196.8 160.2 L192 160.2 L192 190.2 L108 190.2 L108 160.2 L103.2 160.2 L103.2 152.4 L108 152.4 L108 126 Z"/>
 <path class="body-thin" d="M192 160.2 L195.5 172 L192 172 Z"/>
@@ -76,11 +76,11 @@
 <line class="leader" x1="508.2" y1="98" x2="508.2" y2="108.2"/>
 <line class="leader" x1="601.8" y1="98" x2="601.8" y2="108.2"/>
 <text class="th" x="555" y="90" text-anchor="middle">15.6</text>
-<text class="ts" x="555" y="222" text-anchor="middle">15.6 x 15.6 square</text>
-<text class="ts" x="555" y="244" text-anchor="middle">cross stem at center</text>
+<text class="ts" x="555" y="222" text-anchor="middle">15.6 × 15.6 角</text>
+<text class="ts" x="555" y="244" text-anchor="middle">中央に十字ステム</text>
 
-<text class="th" x="190" y="300" text-anchor="middle">Bottom view / pin layout</text>
-<text class="th" x="510" y="300" text-anchor="middle">Plate mount section</text>
+<text class="th" x="190" y="300" text-anchor="middle">底面図／ピン配置</text>
+<text class="th" x="510" y="300" text-anchor="middle">プレートマウント断面</text>
 
 <rect class="hidden" x="123.2" y="353.2" width="93.6" height="93.6" rx="4"/>
 <rect class="body" x="128" y="358" width="84" height="84" rx="3"/>
@@ -94,12 +94,12 @@
 <line class="leader" x1="200.5" y1="408" x2="200.5" y2="466"/>
 <text class="ts" x="170" y="482" text-anchor="middle">10.16 (5.08 x 2)</text>
 <circle class="outline" cx="252" cy="350" r="6"/>
-<text class="ts" x="264" y="354">center boss D4.0</text>
+<text class="ts" x="264" y="354">中央ボス φ4.0</text>
 <circle class="outline" cx="252" cy="380" r="3.5"/>
-<text class="ts" x="264" y="384">locating D1.7</text>
+<text class="ts" x="264" y="384">位置決めボス φ1.7</text>
 <circle class="pin" cx="252" cy="410" r="3.5"/>
-<text class="ts" x="264" y="414">contact D1.5</text>
-<text class="ts" x="245" y="444">pin coords</text>
+<text class="ts" x="264" y="414">端子 φ1.5</text>
+<text class="ts" x="245" y="444">ピン座標</text>
 <text class="ts" x="245" y="462">(-3.81, 2.54)</text>
 <text class="ts" x="245" y="478">(2.54, 5.08)</text>
 
@@ -120,5 +120,5 @@
 <line class="dim" x1="424" y1="400" x2="424" y2="448.6" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
 <line class="leader" x1="424" y1="448.6" x2="487" y2="448.6"/>
 <text class="ts" x="420" y="444" text-anchor="end">8.1</text>
-<text class="ts" x="510" y="478" text-anchor="middle">plate cutout 14.0 sq / flange 15.6 rests on plate</text>
+<text class="ts" x="510" y="478" text-anchor="middle">プレート開口 14.0 角／フランジ 15.6 がプレート上面に載る</text>
 </svg>
