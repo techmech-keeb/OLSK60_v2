@@ -9,6 +9,9 @@ tools/keydiagram/
 ├─ render_png.mjs     # SVG → PNG(2x) レンダラ（要 Node + Playwright + Chromium）
 ├─ fetch_fonts.py     # PNG 描画用 Noto Sans JP ウェブフォント取得（初回のみ）
 ├─ verify_style.py    # 様式回帰テスト（layer0 図をバイト一致で再現できるか）
+├─ sync_parts.py      # 共通部品を各図へ複製・検証
+├─ parts/
+│  └─ mx-switch.svg   # スイッチ正面図の部品マスター
 ├─ layouts/
 │  └─ olsk60.yaml     # 表示レイアウト（キー座標・出荷時刻印）＋ハードウェア注記
 └─ diagrams/
@@ -85,6 +88,32 @@ size_palette:             # サイズ→配色（label_mode: size 時に適用�
 `variant` を増やすときは `layouts/olsk60.yaml` の `variants:` に
 `replace_y`（差し替える行）とその行のキー一覧を足す。座標の出典は
 VIA 用キーボード定義 JSON（レイアウトオプションの選択肢）。
+
+## 共通部品（parts/）
+
+複数の図に登場する部品（キースイッチ等）は `parts/` にマスターを置き、
+`sync_parts.py` で各図へ複製する。
+
+```bash
+python3 sync_parts.py           # マスターの内容を各図へ反映
+python3 sync_parts.py --check   # ズレがないか検証のみ
+```
+
+GitHub 上で表示される SVG は外部ファイルを参照できない（`<use href="other.svg#id">`
+が効かない）ため、部品は各図にインライン複製する必要がある。複製先は
+`<!-- parts:<部品名>:begin -->` 〜 `<!-- parts:<部品名>:end -->` で囲んだ範囲で、
+**この中は手で編集しない**（マスターを直して同期する）。
+
+現在の部品:
+
+| 部品 | マスター | 複製先 |
+|---|---|---|
+| `mx-switch-front` | `parts/mx-switch.svg` | `switch-pins.svg` / `switch-mount.svg` / `build-exploded.svg` |
+
+スイッチ部品の形状は `docs/images/cherry-mx-switch-views.svg`（三面図）の正面図から
+取り出したもので、縮尺は **6px = 1mm**。寸法の根拠は
+`docs/reference/cherry-mx-switch-spec.md`。ピンは図ごとに描き分けるため部品に含めない
+（曲がったピンの図示などに使うため）。
 
 ## 様式を変えないためのルール
 

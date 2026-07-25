@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="190" viewBox="0 0 180 190" font-family="'Noto Sans CJK JP','Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">
+<title>MX互換スイッチ 正面図（図の共通部品マスター）</title>
+<desc>ビルドガイドの各図で使い回すスイッチ正面図の部品。形状は docs/images/cherry-mx-switch-views.svg の正面図から取り出し、原点を左上（0,0）に正規化したもの。</desc>
+
+<!--
+  部品: mx-switch-front
+  形状の出典 : docs/images/cherry-mx-switch-views.svg の「正面図」
+  寸法の出典 : docs/reference/cherry-mx-switch-spec.md
+  縮尺       : 6px = 1mm（元図と同じ）
+  外形       : 幅 93.6px = 15.6mm / 高さ 111px = 18.5mm（ステム頂点〜ボス下端）
+  原点       : 部品の左上角。<use> の x,y はここに合う
+  内訳(部品内座標):
+    ステム頂点      y = 0        （3.6mm 突出）
+    ハウジング上面  y = 21.6
+    フランジ下面    y = 61.2     （プレート上面が載る高さ）
+    ハウジング下面  y = 91.2
+    ボス／ピン下端  y = 111
+  ピンは部品に含めない（図ごとに描く。曲がったピンなどの描き分けのため）。
+    ピン位置(部品内): x = 22.4 と 60.5、幅 3、y = 91.2 から下へ 19.8
+    ピン中心(部品内): x = 23.9 と 62.0 ※MXのピンは左右非対称
+  配色はビルドガイド他図のパレットに合わせてある。
+  この g 要素は tools/keydiagram/sync_parts.py で各図へ複製される。
+  形を直すときはこのファイルを直し、sync_parts.py を実行すること。
+-->
+<defs>
+<!-- parts:mx-switch-front:begin -->
+<g id="mx-switch-front"><g transform="translate(-103.2,-99)"><path d="M115.2 120.6 L184.8 120.6 L192 126 L192 152.4 L196.8 152.4 L196.8 160.2 L192 160.2 L192 190.2 L108 190.2 L108 160.2 L103.2 160.2 L103.2 152.4 L108 152.4 L108 126 Z" fill="#e9ecef" stroke="#b4bbc2" stroke-width="1.1" stroke-linejoin="round"/><path d="M192 160.2 L195.5 172 L192 172 Z" fill="#e3e7ea" stroke="#b4bbc2" stroke-width="0.9" stroke-linejoin="round"/><path d="M108 160.2 L104.5 172 L108 172 Z" fill="#e3e7ea" stroke="#b4bbc2" stroke-width="0.9" stroke-linejoin="round"/><rect x="133.5" y="99" width="33" height="21.6" rx="2" fill="#ced4da" stroke="#b4bbc2" stroke-width="1.1"/><line x1="150" y1="101" x2="150" y2="118" stroke="#adb5bd" stroke-width="0.8"/><rect x="138" y="190.2" width="24" height="19.8" rx="3" fill="#d3d8dc" stroke="#b4bbc2" stroke-width="0.9"/><rect x="114.4" y="190.2" width="10.2" height="17" rx="2" fill="#e3e7ea" stroke="#b4bbc2" stroke-width="0.9"/><rect x="175.4" y="190.2" width="10.2" height="17" rx="2" fill="#e3e7ea" stroke="#b4bbc2" stroke-width="0.9"/></g></g>
+<!-- parts:mx-switch-front:end -->
+</defs>
+
+<rect width="180" height="190" fill="#ffffff"/>
+<text x="90" y="24" font-size="11" fill="#868e96" font-weight="700" text-anchor="middle">mx-switch-front（プレビュー）</text>
+<rect x="65.6" y="131.2" width="3" height="19.8" fill="#8a5416"/>
+<rect x="103.7" y="131.2" width="3" height="19.8" fill="#8a5416"/>
+<use href="#mx-switch-front" x="43.2" y="40"/>
+<text x="90" y="182" font-size="9.5" fill="#adb5bd" text-anchor="middle">6px = 1mm / 93.6 × 111（15.6 × 18.5mm）</text>
+</svg>
