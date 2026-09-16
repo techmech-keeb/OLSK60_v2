@@ -1,0 +1,39 @@
+# レイヤー3（マウスレイヤー）— RMK 版 olsk60。
+# 出典: 製品ファームウェアの Layer 3 キーマップ。
+#   カーソル=右手 IJKL / スクロール=左手 WASD / ボタン=左親指 / 退出=TO(0)。
+#   到達: TrackPoint 操作で自動 ON（無操作で解除）または Layer2 の TG(3) で手動。
+layout: olsk60
+badge: {text: Layer 3, color: "#7d5bb0"}
+title: マウスレイヤー（自動 / 手動 TG(3)）
+note: TrackPoint 操作で自動 ON・無操作で解除
+led: {text: 速度色, color: "#7d5bb0"}
+defaults: disabled
+styles:
+  cur: {fill: "#e7f0fb", stroke: "#2f66c4"}
+  whl: {fill: "#e9f7ec", stroke: "#2f8f45"}
+  btn: {fill: "#fbd9d3", stroke: "#c9524a"}
+  ex:  {fill: "#e9ecef", stroke: "#b4bbc2"}
+keys:
+  esc:  {style: ex,  label: 退出, size: 10, sub: TO(0)}
+  w:    {style: whl, label: ホイール↑, size: 7.5}
+  a:    {style: whl, label: ホイール←, size: 7.5}
+  s:    {style: whl, label: ホイール↓, size: 7.5}
+  d:    {style: whl, label: ホイール→, size: 7.5}
+  i:    {style: cur, label: "↑", size: 14, sub: カーソル}
+  j:    {style: cur, label: "←", size: 14}
+  k:    {style: cur, label: "↓", size: 14}
+  l:    {style: cur, label: "→", size: 14}
+  btn1: {style: btn, label: 左, size: 12}
+  btn2: {style: btn, label: 右, size: 12}
+  mo1:  {style: btn, label: 中, size: 12, sub: Btn3}
+  mo2:  {style: ex,  label: 退出, size: 10, sub: TO(0)}
+encoder:
+  lines:
+    - "回転: ベースと同じ（音量 ±）"
+    - "押し込み: ↓"
+  footnote: ※ TrackPoint 押し込み（Z-Tap）＝左クリック。ドラッグ補正あり
+legend:
+  - {x: 300, style: cur, text: カーソル移動（I/J/K/L）}
+  - {x: 540, style: whl, text: スクロール（W/A/S/D）}
+  - {x: 300, row: 2, style: btn, text: マウスボタン 左 / 右 / 中}
+  - {x: 540, row: 2, style: ex, text: 退出 TO(0)}
