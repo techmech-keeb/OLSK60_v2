@@ -128,7 +128,7 @@ variants:
       - {id: ctrl-bl, x: 0.5,  y: 4, w: 1.25, label: Ctrl, size: 11, mod: true}
       - {id: win,     x: 1.75, y: 4, w: 1.25, label: Win, mod: true}
       - {id: alt,     x: 3,    y: 4, w: 1.25, label: Alt, mod: true}
-      - {id: mo1,     x: 4.25, y: 4, w: 6.25, label: "未対応", size: 10, sub: 6.25U, fill: "#f1f3f5", stroke: "#b4bbc2"}
+      - {id: mo1,     x: 4.25, y: 4, w: 6.25, label: Space, size: 11, sub: 要割り当て, fill: "#f1f3f5", stroke: "#b4bbc2"}
       - {id: mo2,     x: 10.5, y: 4, label: MO(2), size: 11, sub: 設定, fill: "#d8f0dc", stroke: "#2f8f45"}
       - {id: left,    x: 11.5, y: 4, label: "←"}
       - {id: down,    x: 12.5, y: 4, label: "↓"}
