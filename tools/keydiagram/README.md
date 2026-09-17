@@ -87,7 +87,7 @@ size_palette:             # サイズ→配色（label_mode: size 時に適用�
 
 `variant` を増やすときは `layouts/olsk60.yaml` の `variants:` に
 `replace_y`（差し替える行）とその行のキー一覧を足す。座標の出典は
-VIA 用キーボード定義 JSON（レイアウトオプションの選択肢）。
+製品のキーボード定義（レイアウトオプションの選択肢）。
 
 ## 共通部品（parts/）
 

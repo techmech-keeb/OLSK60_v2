@@ -15,7 +15,7 @@ encoder:
 legend:
   - {x: 340, style: btn1, text: マウス左ボタン（全レイヤー有効）}
   - {x: 545.0, style: btn2, text: マウス右ボタン（全レイヤー有効）}
-  - {x: 750.0, style: mo1, text: レイヤー1切替（押している間）}
+  - {x: 750.0, style: mo1, text: スクロール＋Fn（押している間）}
   - {x: 340, row: 2, style: mo2, text: レイヤー2切替（押している間）}
 styles:
   btn1: {fill: "#fbd9d3", stroke: "#c9524a"}

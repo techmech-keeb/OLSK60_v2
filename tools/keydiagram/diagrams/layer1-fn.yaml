@@ -1,0 +1,51 @@
+# レイヤー1（Fn レイヤー）— RMK 版 olsk60。
+# 出典: 製品ファームウェアの Layer 1 キーマップ。
+#   ベースと変わるキーだけを強調表示する（同じキーは薄灰＝素通り扱い）。
+layout: olsk60
+badge: {text: Layer 1, color: "#2e9aab"}
+title: Fn レイヤー（MO(1) 押下中）
+note: MO(1) を押しながら各キー
+led: {text: 青, color: "#2e9aab"}
+defaults: disabled
+styles:
+  fn: {fill: "#d9f2f6", stroke: "#2e9aab"}
+keys:
+  esc:  {style: fn, label: "`", sub: "~"}
+  "1":  {style: fn, label: F1}
+  "2":  {style: fn, label: F2}
+  "3":  {style: fn, label: F3}
+  "4":  {style: fn, label: F4}
+  "5":  {style: fn, label: F5}
+  "6":  {style: fn, label: F6}
+  "7":  {style: fn, label: F7}
+  "8":  {style: fn, label: F8}
+  "9":  {style: fn, label: F9}
+  "0":  {style: fn, label: F10}
+  q:    {style: fn, label: F11}
+  w:    {style: fn, label: F12}
+  e:    {style: fn, label: "↑", size: 14}
+  i:    {style: fn, label: Insert, size: 8.5}
+  p:    {style: fn, label: PrtSc, size: 9}
+  bsls: {style: fn, label: "¥"}
+  ctrl-l: {style: fn, label: Caps, size: 10}
+  s:    {style: fn, label: "←", size: 14}
+  d:    {style: fn, label: "↓", size: 14}
+  f:    {style: fn, label: "→", size: 14}
+  j:    {style: fn, label: "-", sub: "_"}
+  k:    {style: fn, label: "=", sub: "+"}
+  l:    {style: fn, label: "[", sub: "{"}
+  scln: {style: fn, label: "]", sub: "}"}
+  n:    {style: fn, label: Num, size: 9.5}
+  comm: {style: fn, label: "'", sub: '"'}
+  up:   {style: fn, label: PgUp, size: 9.5}
+  left: {style: fn, label: Home, size: 9}
+  down: {style: fn, label: PgDn, size: 9.5}
+  right: {style: fn, label: End, size: 10}
+encoder:
+  lines:
+    - "時計回り: PageDown"
+    - "反時計回り: PageUp"
+    - "押し込み: ↓"
+  footnote: ""
+legend:
+  - {x: 340, style: fn, text: Fn 機能（薄灰のキーはベースレイヤーのまま）}

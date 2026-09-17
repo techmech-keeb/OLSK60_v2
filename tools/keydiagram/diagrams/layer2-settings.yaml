@@ -1,0 +1,50 @@
+# レイヤー2（設定レイヤー）— RMK 版 olsk60 の firmware 制御 + 設定キー。
+# 出典: 製品ファームウェアの Layer 2 キーマップと設定キーの仕様。
+#   User0..4=速度 L1..5 / User5..7=AL遅延 / User8/9=サウンド / User12..17=custom 調整 /
+#   User18=自動マウス層 ON/OFF / User23=スクロール曲線 ON/OFF /
+#   ClearEeprom / Bootloader(BOOTSEL) / Reboot / エンコーダ=オクターブ。
+layout: olsk60
+badge: {text: Layer 2, color: "#2f8f45"}
+title: 設定レイヤー（MO(2) 押下中）
+note: MO(2) を押しながら各キーを押す
+led: {text: 橙, color: "#cc7a29"}
+defaults: disabled
+styles:
+  spd: {fill: "#e7f0fb", stroke: "#2f66c4"}
+  dly: {fill: "#e9f7ec", stroke: "#2f8f45"}
+  snd: {fill: "#fff1e0", stroke: "#cc7a29"}
+  fw:  {fill: "#e9ecef", stroke: "#b4bbc2"}
+keys:
+  esc:  {style: fw,  label: 設定消去, size: 8, sub: "※無効"}
+  "1":  {style: spd, label: 速度1, size: 10, sub: 青}
+  "2":  {style: spd, label: 速度2, size: 10, sub: 緑}
+  "3":  {style: spd, label: 速度3, size: 10, sub: 赤}
+  "4":  {style: spd, label: 速度4, size: 10, sub: 紫}
+  "5":  {style: spd, label: 速度5, size: 10, sub: 橙}
+  "0":  {style: fw,  label: BOOTSEL, size: 8}
+  bksp: {style: fw,  label: 再起動, size: 10}
+  q:    {style: spd, label: 速度+, size: 9, sub: custom}
+  w:    {style: spd, label: 速度−, size: 9, sub: custom}
+  e:    {style: fw,  label: マウス層, size: 8, sub: TG(3)}
+  a:    {style: spd, label: 加速+, size: 9, sub: custom}
+  s:    {style: spd, label: 加速−, size: 9, sub: custom}
+  d:    {style: spd, label: 減速+, size: 9, sub: custom}
+  f:    {style: spd, label: 減速−, size: 9, sub: custom}
+  t:    {style: spd, label: スクロール曲線, size: 6.5, sub: 紫/白}
+  y:    {style: dly, label: 遅延S, size: 9.5, sub: 150ms}
+  u:    {style: dly, label: 遅延M, size: 9.5, sub: 400ms}
+  i:    {style: dly, label: 遅延L, size: 9.5, sub: 800ms}
+  o:    {style: dly, label: 自動層切替, size: 8, sub: シアン/橙}
+  z:    {style: snd, label: 音ON/OFF, size: 7.5, sub: 緑/赤}
+  x:    {style: snd, label: 音モード, size: 8, sub: 青/黄}
+encoder:
+  lines:
+    - "時計回り: オクターブ +"
+    - "反時計回り: オクターブ −"
+    - "ピアノモード中のみ有効"
+  footnote: ※ 速度・遅延・サウンド・スクロール曲線の設定は flash に自動保存され、電源 OFF でも保持されます
+legend:
+  - {x: 300, style: spd, text: TrackPoint の設定（速度・曲線）}
+  - {x: 560, style: dly, text: 自動マウス層（遅延・ON/OFF）}
+  - {x: 300, row: 2, style: snd, text: サウンド設定（ON/OFF・モード）}
+  - {x: 560, row: 2, style: fw, text: 本体制御（BOOTSEL/再起動/マウス層）}
