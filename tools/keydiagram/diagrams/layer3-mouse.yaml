@@ -1,10 +1,10 @@
 # レイヤー3（マウスレイヤー）— RMK 版 olsk60。
-# 出典: 製品ファームウェアの Layer 3 キーマップ。
+# 出典: 製品ファームウェアのマウスレイヤー（Layer 4）キーマップ。
 #   カーソル=右手 IJKL / スクロール=左手 WASD / ボタン=左親指 / 退出=TO(0)。
-#   到達: TrackPoint 操作で自動 ON（無操作で解除）または Layer2 の TG(3) で手動。
+#   到達: TrackPoint 操作で自動 ON（無操作で解除）または Layer2 の TG(4)（「.」の位置）で手動。
 layout: olsk60
-badge: {text: Layer 3, color: "#7d5bb0"}
-title: マウスレイヤー（自動 / 手動 TG(3)）
+badge: {text: Layer 4, color: "#7d5bb0"}
+title: マウスレイヤー（自動 / 手動 TG(4)）
 note: TrackPoint 操作で自動 ON・無操作で解除
 led: {text: 速度色, color: "#7d5bb0"}
 defaults: disabled
