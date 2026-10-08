@@ -6,7 +6,7 @@ layout: olsk60
 badge: {text: Layer 4, color: "#7d5bb0"}
 title: マウスレイヤー（自動 / 手動 TG(4)）
 note: TrackPoint 操作で自動 ON・無操作で解除
-led: {text: 速度色, color: "#7d5bb0"}
+led: {text: "自動は速度色・手動はマゼンタ", color: "#7d5bb0"}
 defaults: disabled
 styles:
   cur: {fill: "#e7f0fb", stroke: "#2f66c4"}
