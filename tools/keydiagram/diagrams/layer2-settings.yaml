@@ -9,7 +9,7 @@ layout: olsk60
 badge: {text: Layer 2, color: "#2f8f45"}
 title: 設定レイヤー（設定キー押下中）
 note: 設定キー（Delete の右）を押しながら各キーを押す
-led: {text: "橙（調整中は対象色で明滅）", color: "#cc7a29"}
+led: {text: "橙（調整中は対象色で速く明滅）", color: "#cc7a29"}
 defaults: disabled
 styles:
   spd: {fill: "#e7f0fb", stroke: "#2f66c4"}
@@ -19,8 +19,8 @@ styles:
   fw:  {fill: "#e9ecef", stroke: "#b4bbc2"}
 keys:
   "1":  {style: spd, label: 速度1, size: 10, sub: 青}
-  "2":  {style: spd, label: 速度3, size: 10, sub: 黄・既定}
-  "3":  {style: spd, label: 速度4, size: 10, sub: 紫}
+  "2":  {style: spd, label: 速度3・既定, size: 8, sub: シアン}
+  "3":  {style: spd, label: 速度4, size: 10, sub: マゼンタ}
   "4":  {style: spd, label: 速度5, size: 10, sub: 橙}
   "5":  {style: fw,  label: 出荷時に戻す, size: 6.5, sub: 押し続け2秒}
   "9":  {style: fw,  label: 設定消去, size: 8}
@@ -37,7 +37,7 @@ keys:
   z:    {style: dly, label: 自動層切替, size: 8, sub: 緑/赤}
   x:    {style: dly, label: 遅延S, size: 9.5, sub: 150ms}
   c:    {style: dly, label: 遅延L, size: 9.5, sub: 800ms}
-  v:    {style: adj, label: 対象:遅延, size: 7, sub: 白}
+  v:    {style: adj, label: 対象:遅延, size: 7, sub: 橙}
   up:    {style: adj, label: 値＋, size: 9, sub: 対象色}
   down:  {style: adj, label: 値−, size: 9, sub: 対象色}
   left:  {style: adj, label: 対象←, size: 8}
