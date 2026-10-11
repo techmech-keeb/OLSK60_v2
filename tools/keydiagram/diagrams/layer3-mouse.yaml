@@ -1,6 +1,6 @@
 # レイヤー3（マウスレイヤー）— RMK 版 olsk60。
 # 出典: 製品ファームウェアのマウスレイヤー（Layer 4）キーマップ。
-#   カーソル=右手 IJKL / スクロール=左手 WASD / ボタン=左親指 / 退出=TO(0)。
+#   カーソル=右手 IJKL / スクロール=左手 WASD / ボタン=左親指 / TP スクロール=Scrl 位置 / 退出=TO(0)。
 #   到達: TrackPoint 操作で自動 ON（無操作で解除）または Layer2 の TG(4)（「.」の位置）で手動。
 layout: olsk60
 badge: {text: Layer 4, color: "#7d5bb0"}
@@ -13,6 +13,7 @@ styles:
   whl: {fill: "#e9f7ec", stroke: "#2f8f45"}
   btn: {fill: "#fbd9d3", stroke: "#c9524a"}
   ex:  {fill: "#e9ecef", stroke: "#b4bbc2"}
+  scr: {fill: "#d9f2f6", stroke: "#2e9aab"}
 keys:
   esc:  {style: ex,  label: 退出, size: 10, sub: TO(0)}
   w:    {style: whl, label: ホイール↑, size: 7.5}
@@ -25,7 +26,7 @@ keys:
   l:    {style: cur, label: "→", size: 14}
   btn1: {style: btn, label: 左, size: 12}
   btn2: {style: btn, label: 右, size: 12}
-  mo1:  {style: btn, label: 中, size: 12, sub: Btn3}
+  mo1:  {style: scr, label: Scrl, size: 12, sub: スクロール}
   mo2:  {style: ex,  label: 退出, size: 10, sub: TO(0)}
 encoder:
   lines:
@@ -35,5 +36,6 @@ encoder:
 legend:
   - {x: 300, style: cur, text: カーソル移動（I/J/K/L）}
   - {x: 540, style: whl, text: スクロール（W/A/S/D）}
-  - {x: 300, row: 2, style: btn, text: マウスボタン 左 / 右 / 中}
+  - {x: 300, row: 2, style: btn, text: マウスボタン 左 / 右}
   - {x: 540, row: 2, style: ex, text: 退出 TO(0)}
+  - {x: 740, row: 2, style: scr, text: Scrl（TP スクロール）}
