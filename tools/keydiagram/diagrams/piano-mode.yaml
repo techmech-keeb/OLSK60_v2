@@ -6,7 +6,7 @@
 layout: olsk60
 badge: {text: サウンド, color: "#2f66c4"}
 title: ピアノモード（音階配置）
-note: レイヤー2 + X で切替（音声ON時のみ）
+note: レイヤー2 + S で切替（音声ON時のみ）
 led: {text: 青}
 defaults: disabled
 styles:

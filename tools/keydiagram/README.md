@@ -108,7 +108,12 @@ GitHub 上で表示される SVG は外部ファイルを参照できない（`<
 
 | 部品 | マスター | 複製先 |
 |---|---|---|
-| `mx-switch-front` | `parts/mx-switch.svg` | `switch-pins.svg` / `switch-mount.svg` / `build-exploded.svg` |
+| `mx-switch-front` | `parts/mx-switch.svg` | （なし） |
+
+ビルドガイドの組み立て図（`build-exploded.png` / `flat-cable-handling.png` /
+`stab-positions.png` / `switch-pins.png` / `switch-mount.png` / `case-mount.png`）は
+3D モデルから描画した PNG で、このツールでは生成しない。以前はこれらの SVG 版が
+`mx-switch-front` の複製先だった。
 
 スイッチ部品の形状は `docs/images/cherry-mx-switch-views.svg`（三面図）の正面図から
 取り出したもので、縮尺は **6px = 1mm**。寸法の根拠は

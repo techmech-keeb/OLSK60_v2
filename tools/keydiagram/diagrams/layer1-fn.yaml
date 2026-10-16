@@ -3,8 +3,8 @@
 #   ベースと変わるキーだけを強調表示する（同じキーは薄灰＝素通り扱い）。
 layout: olsk60
 badge: {text: Layer 1, color: "#2e9aab"}
-title: Fn レイヤー（MO(1) 押下中）
-note: MO(1) を押しながら各キー
+title: Fn レイヤー（Scrl キー押下中）
+note: Scrl キー（左親指）を押しながら各キー
 led: {text: 青, color: "#2e9aab"}
 defaults: disabled
 styles:
@@ -43,8 +43,8 @@ keys:
   right: {style: fn, label: End, size: 10}
 encoder:
   lines:
-    - "時計回り: PageDown"
-    - "反時計回り: PageUp"
+    - "時計回り: PageUp"
+    - "反時計回り: PageDown"
     - "押し込み: ↓"
   footnote: ""
 legend:
