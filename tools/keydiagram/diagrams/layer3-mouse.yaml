@@ -32,7 +32,7 @@ encoder:
   lines:
     - "回転: ベースと同じ（音量 ±）"
     - "押し込み: ↓"
-  footnote: ※ TrackPoint 押し込み（Z-Tap）＝左クリック。ドラッグ補正あり
+  footnote: ※ TrackPoint の押し込み＝左クリック（出荷時 ON・レイヤー2 + G で OFF）。ボタンを押したままの移動中はマウスレイヤーを保持
 legend:
   - {x: 300, style: cur, text: カーソル移動（I/J/K/L）}
   - {x: 540, style: whl, text: スクロール（W/A/S/D）}
