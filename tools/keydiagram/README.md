@@ -9,9 +9,7 @@ tools/keydiagram/
 ├─ render_png.mjs     # SVG → PNG(2x) レンダラ（要 Node + Playwright + Chromium）
 ├─ fetch_fonts.py     # PNG 描画用 Noto Sans JP ウェブフォント取得（初回のみ）
 ├─ verify_style.py    # 様式回帰テスト（layer0 図をバイト一致で再現できるか）
-├─ sync_parts.py      # 共通部品を各図へ複製・検証
-├─ parts/
-│  └─ mx-switch.svg   # スイッチ正面図の部品マスター
+├─ sync_parts.py      # 共通部品を各図へ複製・検証（現在は部品なし）
 ├─ layouts/
 │  └─ olsk60.yaml     # 表示レイアウト（キー座標・出荷時刻印）＋ハードウェア注記
 └─ diagrams/
@@ -104,21 +102,13 @@ GitHub 上で表示される SVG は外部ファイルを参照できない（`<
 `<!-- parts:<部品名>:begin -->` 〜 `<!-- parts:<部品名>:end -->` で囲んだ範囲で、
 **この中は手で編集しない**（マスターを直して同期する）。
 
-現在の部品:
-
-| 部品 | マスター | 複製先 |
-|---|---|---|
-| `mx-switch-front` | `parts/mx-switch.svg` | （なし） |
+現在の部品: なし（部品を追加するときは `parts/` を作り、`sync_parts.py` の `PARTS` に登録する）。
 
 ビルドガイドの組み立て図（`build-exploded.png` / `flat-cable-handling.png` /
 `stab-positions.png` / `switch-pins.png` / `switch-mount.png` / `case-mount.png`）は
 3D モデルから描画した PNG で、このツールでは生成しない。以前はこれらの SVG 版が
-`mx-switch-front` の複製先だった。
-
-スイッチ部品の形状は `docs/images/cherry-mx-switch-views.svg`（三面図）の正面図から
-取り出したもので、縮尺は **6px = 1mm**。寸法の根拠は
-`docs/reference/cherry-mx-switch-spec.md`。ピンは図ごとに描き分けるため部品に含めない
-（曲がったピンの図示などに使うため）。
+スイッチ正面図の部品（`mx-switch-front`）の複製先だったが、図の置き換えとビルドガイドの
+スイッチ寸法の節の削除にあわせて、部品と三面図・寸法リファレンスを削除した。
 
 ## 様式を変えないためのルール
 

@@ -23,14 +23,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 IMAGES = os.path.normpath(os.path.join(HERE, '..', '..', 'docs', 'images'))
 
 # 部品名 -> (マスターファイル, 複製先の図)
-# mx-switch-front の複製先だったビルドガイドの組み立て図（switch-pins / switch-mount /
-# build-exploded）は 3D モデルから描画した PNG に置き換えたため、現在は複製先がない。
-PARTS = {
-    'mx-switch-front': (
-        os.path.join(HERE, 'parts', 'mx-switch.svg'),
-        [],
-    ),
-}
+# 現在は部品なし（ビルドガイドの組み立て図は 3D モデルから描画した PNG に置き換えた）。
+PARTS = {}
 
 
 def block_re(name):
