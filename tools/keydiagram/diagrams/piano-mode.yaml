@@ -4,6 +4,7 @@
 #   - 白鍵相当 10 キー / 黒鍵相当 7 キー、その他のキーはランダム音
 #   - Enter はタイプライター効果音（typewriter_song）
 layout: olsk60
+variant: 3-split   # 標準（v2・v2.2 出荷時）の最下段。5-Split は文書側で注記する
 badge: {text: サウンド, color: "#2f66c4"}
 title: ピアノモード（音階配置）
 note: レイヤー2 + S で切替（音声ON時のみ）
