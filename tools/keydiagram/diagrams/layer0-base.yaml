@@ -1,6 +1,7 @@
-# レイヤー0（基本レイヤー）— 既存 docs/images/layer0-base.svg の再現スペック。
-# ジェネレータの様式回帰テストとして使う（verify_layer0.py が既存SVGと突合する）。
+# レイヤー0（基本レイヤー）— docs/images/layer0-base.svg の生成スペック（3-Split 標準）。
+# ジェネレータの様式回帰テストとして使う（verify_style.py が既存SVGと突合する）。
 layout: olsk60
+variant: 3-split   # 標準（v2・v2.2 出荷時）の最下段。5-Split は文書側で注記する
 badge: {text: Layer 0, color: "#868e96"}
 title: 基本レイヤー
 note: 常時有効（ベース）
@@ -13,9 +14,7 @@ encoder:
     - "押し込み: ↓"
   footnote: ※ 回転方向と機能の対応は取り付け向きに依存します
 legend:
-  - {x: 340, style: btn1, text: マウス左ボタン（全レイヤー有効）}
-  - {x: 545.0, style: btn2, text: マウス右ボタン（全レイヤー有効）}
-  - {x: 750.0, style: mo1, text: スクロール＋Fn（押している間）}
+  - {x: 340, style: mo1, text: スクロール＋Fn（押している間）}
   - {x: 340, row: 2, style: mo2, text: 設定キー（押している間 L2・タップしてから押し続けると L3）}
 styles:
   btn1: {fill: "#fbd9d3", stroke: "#c9524a"}

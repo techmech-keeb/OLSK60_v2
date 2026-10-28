@@ -6,6 +6,7 @@
 #   ↑/↓ = 値 ±、←/→ = 対象切替、「.」 = マウス層 TG(4)、9 = 設定消去、0 = BOOTSEL、
 #   Backspace = 再起動、エンコーダ = オクターブ。
 layout: olsk60
+variant: 3-split   # 標準（v2・v2.2 出荷時）の最下段。5-Split は文書側で注記する
 badge: {text: Layer 2, color: "#2f8f45"}
 title: 設定レイヤー（設定キー押下中）
 note: 設定キー（Delete の右）を押しながら各キーを押す
